@@ -64,14 +64,16 @@ drop table OrderReference;
 
 -------------------------------------
 
-create table Orders(
-    id integer,
+create table OrderDetails(
+    itemId serial not null,
+    orderId integer not null,
     product varchar(30) not null,
     quantity integer not null,
-    unitPrice numeric not null,
-    discount numeric not null,
-    vendorId integer,
+    price numeric not null,
+    discountNet numeric not null,
+    vendorId integer not null,
     status varchar(30) not null,
+    primary key(itemId),
     constraint fk_orderId
         foreign key(id)
             references OrderReference(orderId),
@@ -80,7 +82,7 @@ create table Orders(
             references Vendors(id)
 );
 
-drop table Orders;
+drop table OrderDetails;
 
 -------------------------------------
 
