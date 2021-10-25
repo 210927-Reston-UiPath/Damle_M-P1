@@ -1,0 +1,10 @@
+<li id="profile_menu" ... >
+	...
+	<div id="profile" ... >
+		<div class="submenu_option">
+			<a href="https://training.openspan.com/logout">
+				Sign Out
+			</a>
+		</div>
+	</div>
+</li>
