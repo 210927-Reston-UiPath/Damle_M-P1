@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>657,4140</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>637,4100</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExecuteShoppingTripAt2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -445,9 +445,7 @@
     </ui:BrowserScope>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke LogoutExitVendor2 workflow" sap:VirtualizedContainerService.HintSize="527,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="BrowserAutomation\LogoutExitVendor2.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="ui:Browser" x:Key="uiBrowser">
-          <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="uiBrowser" />
-        </InArgument>
+        <InArgument x:TypeArguments="ui:Browser" x:Key="uiBrowser">[uiBrowser]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
