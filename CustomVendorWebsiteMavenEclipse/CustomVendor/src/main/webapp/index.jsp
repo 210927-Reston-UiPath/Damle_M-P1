@@ -4,11 +4,38 @@
 
 <!-- Body -->
 		<header>
-			<title>Sweets Shop</title>
+			<title>Custom Vendor</title>
 		</header>
-	
-		<h2>Welcome to Sweets Shop</h2>
-		<p>I'm a dog</p>
+		<div class="container">
+			<div class="row">
+				<h2>Welcome to Custom Vendor!</h2>
+				<p>I'm a dog</p>
+			</div>
+			<div class="row">
+				<div class="col">
+					<table class="table" id="products-table">
+						<thead>
+							<th></th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Discount</th>
+							<th>Quantity</th>
+							<th></th>
+						</thead>
+					</table>
+				</div>
+				<div class="col">
+					<table class="table" id="cart-table">
+						<thead>
+							<td>Name</td>
+							<td>Quantity</td>
+							<td>Discount</td>
+							<td>Sub Total</td>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
 	
 	
 <!-- Footer -->
