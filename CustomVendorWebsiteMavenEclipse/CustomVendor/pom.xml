@@ -28,6 +28,12 @@
   		<scope>provided</scope>
   	</dependency>
   	<!-- Database -->
+  	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+    	<groupId>org.postgresql</groupId>
+    	<artifactId>postgresql</artifactId>
+    	<version>42.3.0</version>
+	</dependency>
   	<!-- JSP Standard Tag Library -->
   	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 	<dependency>
