@@ -2,7 +2,8 @@
 https://training.openspan.com/product/seasonings
 
 |Custom Vendor - Maven Web App in Eclipse using Wildfly|
-http://localhost:8080/CustomVendor/Products
+(current) http://localhost:8080/CustomVendor/Products
 
 |Custom Vendor - VsCode Project using Live Sever|
-http://127.0.0.1:5500/index.html
+(current) https://210927-reston-uipath.github.io/damle_m_p1.customvendor.vscodeproject/
+(old) http://127.0.0.1:5500/index.html

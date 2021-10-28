@@ -11,6 +11,7 @@ select * from Vendors;
 select * from VendorAccess;
 
 ---------------------------------
+--Run the below transaction to reset the data base after the process has been tested.
 
 truncate table OrderDetails;
 delete from Orders where id > 24;
