@@ -72,13 +72,15 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="log" />
       <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
+      <Variable x:TypeArguments="x:String" Default="http://localhost:8080/CustomVendor/Products" Name="mavenUri" />
+      <Variable x:TypeArguments="x:String" Default="http://127.0.0.1:5500/index.html" Name="vscodeUri" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="837,3227" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" UiBrowser="[uiBrowser]" Url="http://localhost:8080/CustomVendor/Products">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="837,3227" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" UiBrowser="[uiBrowser]" Url="[mavenUri]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

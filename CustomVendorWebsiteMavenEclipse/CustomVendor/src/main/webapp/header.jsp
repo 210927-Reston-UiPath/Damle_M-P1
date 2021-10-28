@@ -12,6 +12,6 @@
 	</head>
 	<body>
 		<!-- Navigation -->
-		<nav class="container">
+		<nav class="container nav-justified border-danger">
 			<a class="row" href="Products">Order Products</a>
 		</nav>

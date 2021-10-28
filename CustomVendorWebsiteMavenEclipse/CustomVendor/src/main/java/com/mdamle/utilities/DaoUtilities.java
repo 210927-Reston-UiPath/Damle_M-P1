@@ -15,9 +15,9 @@ import org.postgresql.Driver;
 public class DaoUtilities {
 	
 	//connection info
-	private static final String CONNECTION_USERNAME = "nwzghlmt";
-	private static final String CONNECTION_PASSWORD = "G8xql_1MSFzKxtkhIbT2G5NJWTMkpwfA";
-	private static final String URL = "postgresql://nwzghlmt:G8xql_1MSFzKxtkhIbT2G5NJWTMkpwfA@fanny.db.elephantsql.com:5432/nwzghlmt";
+	private static final String CONNECTION_USERNAME = "";
+	private static final String CONNECTION_PASSWORD = "";
+	private static final String URL = "";
 	private static Connection connection;
 	
 	

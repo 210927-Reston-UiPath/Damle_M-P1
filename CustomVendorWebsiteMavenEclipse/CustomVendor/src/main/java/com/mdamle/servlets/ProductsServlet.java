@@ -7,10 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mdamle.dao.ProductDao;
-import com.mdamle.dao.postgresql.ProductDaoImpl;
-import com.mdamle.model.Product;
-
 /**
  * Servlet implementation class ProductsServlet
  */
@@ -22,11 +18,6 @@ public class ProductsServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("servlet:lets connect");
-		//ProductDao dao = new ProductDaoImpl();
-		//Product product = new Product();
-		//dao.addProduct(product);
-		//System.out.println("servlet:connectin?");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 }
