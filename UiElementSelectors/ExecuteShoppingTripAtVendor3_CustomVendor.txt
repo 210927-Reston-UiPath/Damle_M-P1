@@ -1,0 +1,24 @@
+ExecuteShoppingTripAtVendor3.xaml (Custom Vendor)
+
+-type into (old):
+<html app='msedge.exe' title='Custom Vendor' />
+<webctrl id='products-table' tag='TABLE' />
+<webctrl id='product-name-1' innertext='Salad' tag='TD' />
+<nav up='1' />
+<webctrl parentid='product-quantity-1' tag='INPUT' />
+
+-type into (new):
+<html app='msedge.exe' title='Custom Vendor' />
+<webctrl id='products-table' tag='TABLE' />
+<webctrl innertext='{{productName}}' tag='TD' />
+<nav up='1' />
+<webctrl tag='INPUT' idx='1' />
+
+-click (old):
+<webctrl parentid='product-button-1' tag='INPUT' type='submit' />
+
+-click (new):
+<webctrl id='products-table' tag='TABLE' />
+<webctrl innertext='{{productName}}' tag='TD' />
+<nav up='1' />
+<webctrl tag='INPUT' type='submit' />

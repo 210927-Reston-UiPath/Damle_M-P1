@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,3124</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869,3446</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetVendorProductsInfoFrom3_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -68,7 +68,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetVendorProductsInfoFrom3" sap:VirtualizedContainerService.HintSize="879,3019" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="GetVendorProductsInfoFrom3" sap:VirtualizedContainerService.HintSize="879,3381" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="log" />
       <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -78,13 +78,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="837,2865" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" UiBrowser="[uiBrowser]" Url="http://localhost:8080/CustomVendor/Products">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="837,3227" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" UiBrowser="[uiBrowser]" Url="http://localhost:8080/CustomVendor/Products">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="803,2764" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="803,3126" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exists" />
               <Variable x:TypeArguments="x:String" Name="rowId" />
@@ -116,15 +116,16 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:InterruptibleWhile Condition="[exists]" DisplayName="While" sap:VirtualizedContainerService.HintSize="761,2503" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+            <ui:InterruptibleWhile Condition="[exists]" DisplayName="While" sap:VirtualizedContainerService.HintSize="761,2865" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="725,2338" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="725,2700" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataRow" Name="newRow" />
                     <Variable x:TypeArguments="x:String" Name="priceStr" />
                     <Variable x:TypeArguments="x:Double" Name="priceDbl" />
                     <Variable x:TypeArguments="x:String" Name="discountStr" />
                     <Variable x:TypeArguments="x:Double" Name="discountDbl" />
+                    <Variable x:TypeArguments="x:String" Name="inventoryStatus" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -186,7 +187,7 @@
                       <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                     </If.Then>
                   </If>
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="683,222" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="683,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
@@ -221,17 +222,46 @@
                             <InArgument x:TypeArguments="x:Object">[False]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:Object">[newRow("inventory")]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:Object">[-1]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD  product-stock-1'" sap:VirtualizedContainerService.HintSize="683,106" sap2010:WorkflowViewState.IdRef="GetValue_11">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4bb73b82-4045-4abd-8e50-0b11a1e230f9" InformativeScreenshot="3a7500275247277bc66a0656b53f6992" Selector="&lt;webctrl id='products-table' tag='TABLE' /&gt;&lt;webctrl id='product-stock-{{rowId}}' tag='TD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[inventoryStatus]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <If Condition="[inventoryStatus.Equals(&quot;in stock&quot;)]" sap:VirtualizedContainerService.HintSize="683,207" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[newRow("inventory")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[-1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[newRow("inventory")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[0]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
                   <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD  product-name-1'" sap:VirtualizedContainerService.HintSize="683,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4b05c6bc-3ea0-4113-b9d9-62d0163cd43c" InformativeScreenshot="bfd95b796b131fa17ea1c57ba68a17f4" Selector="&lt;webctrl id='products-table' tag='TABLE' /&gt;&lt;webctrl id='product-name-{{rowId}}' tag='TD' /&gt;">
@@ -264,12 +294,8 @@
                   </ui:GetValue>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CurrencyStringToDouble workflow" sap:VirtualizedContainerService.HintSize="683,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Utilities\CurrencyStringToDouble.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="str">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="priceStr" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="x:Double" x:Key="dbl">
-                        <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="priceDbl" />
-                      </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="str">[priceStr]</InArgument>
+                      <OutArgument x:TypeArguments="x:Double" x:Key="dbl">[priceDbl]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <Assign sap:VirtualizedContainerService.HintSize="683,60" sap2010:WorkflowViewState.IdRef="Assign_9">
@@ -315,12 +341,8 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PercentStringToDouble workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\PercentStringToDouble.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="str">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="discountStr" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Double" x:Key="dbl">
-                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="discountDbl" />
-                            </OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="str">[discountStr]</InArgument>
+                            <OutArgument x:TypeArguments="x:Double" x:Key="dbl">[discountDbl]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>

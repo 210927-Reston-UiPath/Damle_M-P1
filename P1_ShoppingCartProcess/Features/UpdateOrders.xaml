@@ -86,12 +86,16 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetClientIds workflow" sap:VirtualizedContainerService.HintSize="825,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DataAccess\GetClientIds.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="ids">[clients]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="ids">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="clients" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SelectOrderDetailsStructureWithoutId workflow" sap:VirtualizedContainerService.HintSize="825,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DataAccess\SelectOrderDetailsStructureWithoutId.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt">[orderDetails]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="orderDetails" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[clients]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="825,1928" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
@@ -120,11 +124,33 @@
                 <InArgument x:TypeArguments="x:Double">0</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:FilterDataTable Filters="{x:Null}" SelectColumns="{x:Null}" DataTable="[shoppingLists]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="733,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[shoppingList]" SelectColumnsMode="Keep" />
+            <ui:FilterDataTable DataTable="[shoppingLists]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="733,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[shoppingList]" SelectColumnsMode="Keep">
+              <ui:FilterDataTable.Filters>
+                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                  <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+                    <ui:FilterOperationArgument.Column>
+                      <InArgument x:TypeArguments="x:String">["clientId"]</InArgument>
+                    </ui:FilterOperationArgument.Column>
+                    <ui:FilterOperationArgument.Operand>
+                      <InArgument x:TypeArguments="x:Object">[id("id")]</InArgument>
+                    </ui:FilterOperationArgument.Operand>
+                  </ui:FilterOperationArgument>
+                </scg:List>
+              </ui:FilterDataTable.Filters>
+              <ui:FilterDataTable.SelectColumns>
+                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                  <x:Null />
+                </scg:List>
+              </ui:FilterDataTable.SelectColumns>
+            </ui:FilterDataTable>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsertInitialRowIntoOrders workflow" sap:VirtualizedContainerService.HintSize="733,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DataAccess\InsertInitialRowIntoOrders.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Int32" x:Key="clientId">[Convert.ToInt32(id("id"))]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="shoppingTripId">[shoppingTripId]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="clientId">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(id(&quot;id&quot;))" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="shoppingTripId">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="shoppingTripId" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetLatestOrderId workflow" sap:VirtualizedContainerService.HintSize="733,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DataAccess\GetLatestOrderId.xaml">
@@ -287,7 +313,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsertIntoOrderDetails workflow" sap:VirtualizedContainerService.HintSize="518,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="DataAccess\InsertIntoOrderDetails.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsertIntoOrderDetails workflow" sap:VirtualizedContainerService.HintSize="825,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="DataAccess\InsertIntoOrderDetails.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[orderDetails]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
