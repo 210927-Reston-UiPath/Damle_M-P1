@@ -21,3 +21,10 @@ If I have time, I will try to deploy the Maven Web app version of this Custom Ve
 ## Resetting the Tables in the ElephantSql (PostgreSql) Database
 
 The file `006_FinalTransactions.pgsql` in `./DataDesign` contains a transaction consisting of some `DELETE` and `TRUNCATE` statements. Run this transaction after testing the UiPath Process in `./P1_ShoppingCartProcess`.
+
+---
+
+## Demo Video
+
+This is the URL to the playlist containing the two demo videos of this process:
+https://www.youtube.com/playlist?list=PLv1xjXmyNPD75kluay8kDIEXvj6ecFHYw
