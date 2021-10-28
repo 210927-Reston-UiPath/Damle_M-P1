@@ -11,11 +11,11 @@
     	<welcome-file>index.jsp</welcome-file>
   	</welcome-file-list>
   	<servlet>
-  		<servlet-name>MenuServlet</servlet-name>
-  		<servlet-class>com.mdamle.servlets.MenuServlet</servlet-class>
+  		<servlet-name>ProductsServlet</servlet-name>
+  		<servlet-class>com.mdamle.servlets.ProductsServlet</servlet-class>
   	</servlet>
   	<servlet-mapping>
-  		<servlet-name>MenuServlet</servlet-name>
-  		<url-pattern>/Menu</url-pattern>
+  		<servlet-name>ProductsServlet</servlet-name>
+  		<url-pattern>/Products</url-pattern>
   	</servlet-mapping>
 </web-app>

@@ -9,6 +9,11 @@ function addToCart(event){
 	let parentId = this.parentElement.getAttribute("id");
 	let rowId = parentId.charAt(parentId.length - 1);
 	
+	if(document.getElementById("product-stock-"+rowId).innerHTML === "out of stock"){
+		console.log(document.getElementById("product-name-"+rowId).innerHTML + " is out of stock");
+		return;
+	}
+	
 	let name = document.getElementById("product-name-"+rowId).innerHTML;
 	
 	let price = document.getElementById("product-price-"+rowId).innerHTML;

@@ -12,10 +12,10 @@ import com.mdamle.dao.postgresql.ProductDaoImpl;
 import com.mdamle.model.Product;
 
 /**
- * Servlet implementation class MenuServlet
+ * Servlet implementation class ProductsServlet
  */
-//@WebServlet("/MenuServlet")
-public class MenuServlet extends HttpServlet {
+//@WebServlet("/ProductsServlet")
+public class ProductsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -23,10 +23,10 @@ public class MenuServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//System.out.println("servlet:lets connect");
-		ProductDao dao = new ProductDaoImpl();
-		Product product = new Product();
-		dao.addProduct(product);
+		//ProductDao dao = new ProductDaoImpl();
+		//Product product = new Product();
+		//dao.addProduct(product);
 		//System.out.println("servlet:connectin?");
-		request.getRequestDispatcher("underConstruction.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 }

@@ -13,5 +13,5 @@
 	<body>
 		<!-- Navigation -->
 		<nav class="container">
-			<a class="row" href="Menu">Menu</a>
+			<a class="row" href="Products">Order Products</a>
 		</nav>

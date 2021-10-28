@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LoginVendor2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="687,1320" sap2010:WorkflowViewState.IdRef="LoginVendor2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LoginVendor2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="563,1360" sap2010:WorkflowViewState.IdRef="LoginVendor2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -31,7 +31,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,6 +58,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="LoginVendor2" sap:VirtualizedContainerService.HintSize="509,1255" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -73,12 +74,8 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetVendorAccessById workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DataAccess\GetVendorAccessById.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="vendorAccess">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="vendorAccess" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="id">
-          <Literal x:TypeArguments="x:Int32" Value="2" />
-        </InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="vendorAccess">[vendorAccess]</OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="id">2</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:OutputDataTable DataTable="[vendorAccess]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[log]" />
@@ -128,7 +125,7 @@
                 </ui:Target>
               </ui:SetValue.Target>
             </ui:SetValue>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  login_button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
