@@ -1,4 +1,48 @@
-# Read Me
+# RoSA ReadMe
+
+## Overview
+
+RoSA is your robotic shopping assistant, here to help you automate your shopping business. RoSA helps you shop for all your customers from online vendors. It provides customers individual expense reports sent via email. RoSA is also able to help you add more customers to your existing clientele for your growing business. 
+
+---
+
+## MVP Features
+
+- [x] Robot should be able to take client shopping lists and place orders on the appropriate vendors
+- [x] Robot should record the total expense of each shopping trip for each client
+- [x] Robot should be able to record any items that were out of stock or not found
+- [x] Robot should be able to add clients to the existing client list and take in their shopping order
+- [x] Robot should shop from at least 2 vendors
+- [x] One of the vendors should be [Pega](https://training.openspan.com/login)
+- [x] The other vendor should be a self made shop using HTML, CSS, and JS
+
+---
+
+## Stretch Goal Features
+
+- [x] Sending emails to clients about their shopping order
+- [x] Notify clients about vendor discounts/sales
+- [x] Send client expense report in excel format
+
+---
+
+## Constraints
+
+- [x] Client information should be stored in a DB
+- [x] Vendor information should be stored in a webpage
+- [x] Expense Reports should be stored in a DB
+- [x] Automations should have exception handling enabled
+- [x] DB tables should be 3NF
+
+---
+
+## Tech Stack
+
+- [x] UiPath Studio
+- [x] PostgreSQL (ElephantSql Server)
+- [x] HTML, CSS, JS
+
+
 ---
 
 ## Custom Vendor Web Page
